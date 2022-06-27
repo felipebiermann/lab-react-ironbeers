@@ -6,8 +6,16 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  width: 125px;
+}
 
-  width: 20%;
+.card {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-img-top {
+  margin-left: -200px;
 }
 
 .App-logo {
