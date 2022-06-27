@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.imgBeer {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 20%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
