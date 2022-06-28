@@ -17,7 +17,7 @@ export function RandomBeer() {
       }
     }
     fetchRandomBeer();
-  });
+  }, []);
 
   return (
     <>
