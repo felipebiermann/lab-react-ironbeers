@@ -1,26 +1,35 @@
-import imgRandomBeer from "../../assets/random-beer.png";
-import { Link } from "react-router-dom";
 import { NavBar } from "../NavBar";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export function RandomBeer() {
+  const [randomBeers, setRandomBeers] = useState([]);
+  useEffect(() => {
+    async function fetchRandomBeer() {
+      try {
+        const responseRandom = await axios.get(
+          "https://ih-beers-api2.herokuapp.com/beers/random"
+        );
+        setRandomBeers(responseRandom.data);
+        console.log(responseRandom);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchRandomBeer();
+  });
+
   return (
     <>
       <NavBar />
-      <Link to={"/random-beer"}>
-        <img src={imgRandomBeer} alt="Random Beer" />
-      </Link>
-      <div>
-        <h1>Random Beers</h1>
-        <h5>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum
-        </h5>
-      </div>
+      <img class="imgBeer" src={randomBeers.image_url}></img>
+      <h1>{randomBeers.name}</h1>
+      <h2>{randomBeers.tagline}</h2>
+      <h3>{randomBeers.tagline}</h3>
+      <h4>{randomBeers.first_brewed}</h4>
+      <h4>{randomBeers.attenuation_level}</h4>
+      <h4>{randomBeers.description}</h4>
+      <h4>{randomBeers.contributed_by}</h4>
     </>
   );
 }

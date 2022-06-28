@@ -5,7 +5,7 @@ export function NavBar() {
   return (
     <>
       <Link to={"/"}>
-        <img src={HomeBeer} style={{ cursor: "pointer" }} />
+        <img src={HomeBeer} style={{ cursor: "pointer", width: "40%" }} />
       </Link>
     </>
   );

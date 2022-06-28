@@ -20,6 +20,23 @@ export function Home() {
         </a>
 
         <hr />
+        <div className="card" style={{ width: "18rem" }}>
+          <Link to={"/random-beer"}>
+            <img
+              src={imgRandomBeer}
+              className="card-img-top"
+              alt="Random Beer"
+            />
+          </Link>
+          <div>
+            <h1>Random Beers</h1>
+            <h3>Aqui é o lugar para ter cervejas aleatórias!</h3>
+            <a href="random-beer" className="btn btn-primary">
+              <button style={{ cursor: "pointer" }}>Saiba Mais!</button>
+            </a>
+          </div>
+        </div>
+        <hr />
       </div>
       <div className="card" style={{ width: "18rem" }}>
         <Link to={"/new-beer"}>
@@ -27,21 +44,9 @@ export function Home() {
         </Link>
         <div>
           <h1>New Beers</h1>
+          <h4>(em construção)</h4>
           <h3>Adicione novas Cervejas!</h3>
           <a href="new-beer" className="btn btn-primary">
-            <button style={{ cursor: "pointer" }}>Saiba Mais!</button>
-          </a>
-        </div>
-      </div>
-      <hr />
-      <div className="card" style={{ width: "18rem" }}>
-        <Link to={"/random-beer"}>
-          <img src={imgRandomBeer} className="card-img-top" alt="Random Beer" />
-        </Link>
-        <div>
-          <h1>Random Beers</h1>
-          <h3>Aqui é o lugar para ter cervejas aleatórias!</h3>
-          <a href="random-beer" className="btn btn-primary">
             <button style={{ cursor: "pointer" }}>Saiba Mais!</button>
           </a>
         </div>
